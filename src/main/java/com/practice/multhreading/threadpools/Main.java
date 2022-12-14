@@ -1,4 +1,4 @@
-package com.practice.multhreading;
+package com.practice.multhreading.threadpools;
 
 import com.practice.multhreading.executor.PrintNumber;
 
@@ -13,9 +13,14 @@ public class Main {
         //        }
 
         //MODERN WAY TO EXECUTE THREADS
-        Executor executor = Executors.newCachedThreadPool();
+    /*    Executor executor = Executors.newCachedThreadPool();
         for(int i = 1;i<=100;i++){
             executor.execute(new PrintNumber(i));
+        }*/
+
+        Executor fixedThreadPool = Executors.newFixedThreadPool(10);
+        for(int i = 1;i<=100;i++){
+            fixedThreadPool.execute(new PrintNumber(i));
         }
     }
 }
