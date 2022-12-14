@@ -10,8 +10,8 @@ public class Adder implements Runnable {
 
     @Override
     public void run() {
-        for (int i = 1; i <= 100; i++) {
-            System.out.println("Adding");
+        for (int i = 1; i <= 10000; i++) {
+            //System.out.println("Adding");
             int currentValue = this.count.getValue();
             currentValue += 1;
             this.count.setValue(currentValue);
